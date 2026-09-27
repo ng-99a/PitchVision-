@@ -1,0 +1,34 @@
+# Project files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.log
+.DS_Store
+Thumbs.db
+
+# Large local assets and generated outputs
+bird_eye_any_angle.ipynb
+models/
+keypoint_cache/
+Images/
+metadata/
+passing_lane_stats/
+tactical_stats/
+
+# Explicitly ignore known files over 100MB
+bird_eye_any_angle.ipynb
+models/best.pt
+models/last_checkpoint.pt
+
+# Optional data folders that are large or local-only
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.bin
+*.h5
+*.hdf5
+*.npy
+*.npz

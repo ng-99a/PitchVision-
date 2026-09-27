@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MAX_SIZE=$((100 * 1024 * 1024))
+FOUND=0
+
+while IFS= read -r -d '' file; do
+  size=$(wc -c < "$file")
+  if [ "$size" -gt "$MAX_SIZE" ]; then
+    echo "ERROR: Refusing to commit large file: $file ($((size / 1024 / 1024)) MB)" >&2
+    FOUND=1
+  fi
+done < <(git ls-files -z)
+
+if [ "$FOUND" -ne 0 ]; then
+  echo "Large files over 100MB are not allowed in commits. Remove them or add them to .gitignore if they are local-only." >&2
+  exit 1
+fi
+
+exit 0
