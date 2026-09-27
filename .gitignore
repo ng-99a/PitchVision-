@@ -9,7 +9,6 @@ __pycache__/
 Thumbs.db
 
 # Large local assets and generated outputs
-bird_eye_any_angle.ipynb
 models/
 keypoint_cache/
 Images/
@@ -18,7 +17,6 @@ passing_lane_stats/
 tactical_stats/
 
 # Explicitly ignore known files over 100MB
-bird_eye_any_angle.ipynb
 models/best.pt
 models/last_checkpoint.pt
 
